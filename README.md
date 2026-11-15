@@ -4,7 +4,7 @@
 
 Standard library only. Python 3.11+.
 
-Author: Art Akopian ([Banrox](https://banrox.com))
+Built and maintained by Art Akopian, CEO of [Banrox](https://banrox.com). Banrox builds consumer credit and fraud-prevention software and publishes the general-purpose pieces.
 
 ## Use it
 

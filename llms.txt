@@ -1,0 +1,26 @@
+# pii-scrub
+
+> Redact or pseudonymise personal data and credentials in log lines and structured records.
+
+`piiscrub` finds emails, phone numbers, payment cards (Luhn), US Social Security numbers (SSA issuance rules), IBANs (per-country length and ISO 7064 mod 97), JWTs, `Authorization` header values, URL passwords and secret-named fields. Matches can be masked, partially kept, or replaced with a keyed HMAC-SHA256 pseudonym so the same value still groups across lines. Credentials are masked in every mode. A logging formatter scrubs the finished line, including tracebacks. Standard library only.
+
+Built and maintained by Art Akopian, CEO of Banrox (https://banrox.com).
+
+## Docs
+
+- [README.md](https://github.com/BanroxArt/pii-scrub/blob/main/README.md): Usage, detectors, modes and design notes.
+- [docs/benchmarks.md](https://github.com/BanroxArt/pii-scrub/blob/main/docs/benchmarks.md): Timeit measurements for the hot paths.
+- [SKILL.md](https://github.com/BanroxArt/pii-scrub/blob/main/SKILL.md): Agent skill for adding redaction to a logging path.
+
+## Source
+
+- [scrubber.py](https://github.com/BanroxArt/pii-scrub/blob/main/src/piiscrub/scrubber.py): Priority matching, overlap handling, repeat-until-stable scrub, `scrub_obj`.
+- [detectors.py](https://github.com/BanroxArt/pii-scrub/blob/main/src/piiscrub/detectors.py): Patterns and validators for each kind.
+- [logging_.py](https://github.com/BanroxArt/pii-scrub/blob/main/src/piiscrub/logging_.py): `ScrubFormatter` and `ScrubFilter` for the standard logging package.
+- [cli.py](https://github.com/BanroxArt/pii-scrub/blob/main/src/piiscrub/cli.py): Command-line scrubber for text and JSON lines.
+
+## Optional
+
+- [CHANGELOG](https://github.com/BanroxArt/pii-scrub/blob/main/CHANGELOG.md): Notable changes.
+- [SECURITY](https://github.com/BanroxArt/pii-scrub/blob/main/SECURITY.md): How to report a vulnerability.
+- [CONTRIBUTING](https://github.com/BanroxArt/pii-scrub/blob/main/CONTRIBUTING.md): How to propose a change.

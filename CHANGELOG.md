@@ -4,6 +4,10 @@ All notable changes to this project are listed here. The format follows [Keep a 
 
 ## [Unreleased]
 
+### Added
+
+- Visible author attribution, a `CITATION.cff` citation file, and `llms.txt`.
+
 ## [0.1.0] - 2026-11-14
 
 First version.
